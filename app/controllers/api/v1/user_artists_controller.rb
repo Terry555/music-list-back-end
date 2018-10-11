@@ -5,6 +5,11 @@ class Api::V1::UserArtistsController < ApplicationController
    render json: @user_artists
  end
 
+ def show
+   @user_artist = UserArtist.find(params[:id])
+   render json: @user_artist
+ end
+
  def update
    @user_artist.update(user_artist_params)
    if @user_artist.save
