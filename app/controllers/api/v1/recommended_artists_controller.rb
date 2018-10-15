@@ -10,6 +10,20 @@ class Api::V1::RecommendedArtistsController < ApplicationController
    render json: @recommended_artist
  end
 
+ def new
+   @recommended_artist = RecommendedArtist.new
+ end
+
+ def create
+   @recommended_artist = RecommendedArtist.create(recommended_artist_params)
+    render json: @recommended_artist
+   # if @artist.valid?
+   #   redirect_to @artist
+   # else
+   #   render :new
+   # end
+ end
+
  def update
    @recommended_artist.update(recommended_artist_params)
    if @recommended_artist.save

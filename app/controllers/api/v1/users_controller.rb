@@ -10,6 +10,14 @@ class Api::V1::UsersController < ApplicationController
    render json: @user
  end
 
+ def new
+   @user = User.new
+ end
+
+ def create
+   @user = User.create(user_params)
+ end
+
  def update
    @user.update(user_params)
    if @user.save

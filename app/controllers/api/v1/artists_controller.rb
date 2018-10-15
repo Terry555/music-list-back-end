@@ -16,6 +16,7 @@ class Api::V1::ArtistsController < ApplicationController
 
  def create
    @artist = Artist.create(artist_params)
+    render json: @artist
    # if @artist.valid?
    #   redirect_to @artist
    # else

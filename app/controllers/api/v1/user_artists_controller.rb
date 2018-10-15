@@ -10,6 +10,20 @@ class Api::V1::UserArtistsController < ApplicationController
    render json: @user_artist
  end
 
+ def new
+   @user_artist = UserArtist.new
+ end
+
+ def create
+   @user_artist = UserArtist.create(user_artist_params)
+    render json: @user_artist
+   # if @artist.valid?
+   #   redirect_to @artist
+   # else
+   #   render :new
+   # end
+ end
+
  def update
    @user_artist.update(user_artist_params)
    if @user_artist.save
