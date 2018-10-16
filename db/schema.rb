@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2018_10_10_154147) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "similar_artists"
     t.string "image"
     t.string "tag"
     t.string "bio"
