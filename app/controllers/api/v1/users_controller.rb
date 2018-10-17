@@ -16,6 +16,7 @@ class Api::V1::UsersController < ApplicationController
 
  def create
    @user = User.create(user_params)
+   render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
  end
 
  def update
