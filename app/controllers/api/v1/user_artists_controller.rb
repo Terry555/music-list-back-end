@@ -15,7 +15,7 @@ class Api::V1::UserArtistsController < ApplicationController
  end
 
  def create
-   @user_artist = UserArtist.create(user_artist_params)
+   @user_artist = UserArtist.find_or_create_by(user_artist_params)
     render json: @user_artist
    # if @artist.valid?
    #   redirect_to @artist
@@ -31,6 +31,11 @@ class Api::V1::UserArtistsController < ApplicationController
    else
      render json: { errors: @user_artist.errors.full_messages }, status: :unprocessible_entity
    end
+ end
+
+ def delete
+   @user_artist = UserArtist.find_by(user_id:params[:user_id], artist_id:params[:artist_id])
+   @user_artist.destroy
  end
 
  private
