@@ -33,6 +33,15 @@ class Api::V1::ArtistsController < ApplicationController
    end
  end
 
+ def destroy
+   @artist = Artist.find(params[:id])
+   @artist.destroy
+   # @recommended_artist = RecommendedArtist.all.find_by(:id)
+   # @recommended_artist.destroy
+   # Recommendation.destroy_all(:artist_id => params[:id])
+   # RecommendedArtist.destroy_all(:recommended_artist_id => params[:id])
+ end
+
  private
 
  def artist_params
