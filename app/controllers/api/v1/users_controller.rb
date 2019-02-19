@@ -16,7 +16,11 @@ class Api::V1::UsersController < ApplicationController
 
  def create
    @user = User.create(user_params)
-   render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
+   if @user.valid?
+   render json: @user
+  else
+   render json: { errors: "Name has been taken!" }, status: :unprocessible_entity
+  end
  end
 
  def update

@@ -15,7 +15,7 @@ class Api::V1::RecommendationsController < ApplicationController
  end
 
  def create
-   @recommendation = Recommendation.create(recommendation_params)
+   @recommendation = Recommendation.find_or_create_by(recommendation_params)
     render json: @recommendation
    # if @artist.valid?
    #   redirect_to @artist

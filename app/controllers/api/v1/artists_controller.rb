@@ -15,8 +15,9 @@ class Api::V1::ArtistsController < ApplicationController
  end
 
  def create
-   @artist = Artist.create(artist_params)
+   @artist = Artist.find_or_create_by(artist_params)
     render json: @artist
+    # artist.recommended_artists.find_or_create_by
    # if @artist.valid?
    #   redirect_to @artist
    # else

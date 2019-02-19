@@ -1,24 +1,19 @@
-# README
+# Muzak Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Ruby on Rails backend for [Muzak React application](https://github.com/Terry555/music-list-front-end).
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+1. Clone down this repo and run bundle install.
+2. Once this has completed and all dependencies have been installed, run rails s.
 
-* System dependencies
+## Contributing
 
-* Configuration
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
 
-* Database creation
+## License
 
-* Database initialization
+MIT
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Muzak Backend
